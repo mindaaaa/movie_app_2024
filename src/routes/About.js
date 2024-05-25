@@ -1,6 +1,7 @@
 import './About.css';
 
-function About() {
+function About(props) {
+  console.log(props);
   return (
     <div className='about__container'>
       <span>"When you have faults, do not fear to abandon them."</span>
