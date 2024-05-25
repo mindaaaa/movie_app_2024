@@ -1,9 +1,13 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, Navigate } from 'react-router-dom';
 
 function Detail() {
   const location = useLocation();
-  console.log(location); // 전달된 상태 출력
-  return <span>hello</span>;
+  console.log(location.state.title);
+  if (!location.state) {
+    return <Navigate to='/' />;
+  }
+  console.log(location);
+  return <span>{location.state.title}</span>;
 }
 
 export default Detail;
